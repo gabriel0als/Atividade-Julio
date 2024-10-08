@@ -1,0 +1,7 @@
+login='cut -f1 -d ':' /etc/passwd | grep $1 > /dev/null 2> /dev/null
+if [ "$login" == "$1" ]
+then
+	echo "O usuário $1 está cadastrado na máquina"
+else
+	echo "O usuário $1 não está cadastrado na máquina"
+fi
